@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рома</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #121212;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+ 
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+ 
+        .button-container {
+            display: flex;
+            gap: 20px;
+        }
+ 
+        .glow-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #ff4d4d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(255, 77, 77, 0.5), 0 0 45px rgba(255, 77, 77, 0.5);
+        }
+ 
+        .glow-button:hover {
+            color: #ff4d4d;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(255, 77, 77, 1), 0 0 60px rgba(255, 77, 77, 1);
+        }
+ 
+        .glow-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-color: rgba(255, 77, 77, 0.4);
+            transition: opacity 0.5s ease;
+            opacity: 0;
+            transform: rotate(45deg);
+        }
+ 
+        .glow-button:hover::before {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+ 
+    <div>
+        <h1>Рома</h1>
+        <div class="button-container">
+            <button class="glow-button" onclick="glowEffect()">Кнопка 1</button>
+            <button class="glow-button" onclick="glowEffect()">Кнопка 2</button>
+        </div>
+    </div>
+ 
+    <script>
+        function glowEffect() {
+            alert("Кнопка светится красиво!");
+        }
+    </script>
+ 
+</body>
+</html>
